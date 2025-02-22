@@ -17,7 +17,7 @@ This is a Python script that demonstrates HTTP packet sniffing on a network inte
 Clone the repository to your local machine:
 
 ```bash
-git clone https://github.com/yourusername/packet_sniffer.git
+git clone https://github.com/Kasperone/packet_sniffer.git
 cd packet_sniffer
 ```
 
